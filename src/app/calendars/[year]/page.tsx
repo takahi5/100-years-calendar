@@ -1,4 +1,13 @@
 import { HundredYearCalendar } from "@/app/components/HundredYearCalendar";
+import { Metadata } from "next";
+
+type Props = { params: { year: string } };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  return {
+    title: `${params.year}年生まれの100年カレンダー`,
+  };
+}
 
 export async function generateStaticParams() {
   // Generate two pages at build time and the rest on-demand
@@ -77,6 +86,6 @@ export async function generateStaticParams() {
   ];
 }
 
-export default function Page({ params }: { params: { year: string } }) {
+export default function Page({ params }: Props) {
   return <HundredYearCalendar startYear={parseInt(params.year)} />;
 }

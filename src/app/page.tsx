@@ -6,6 +6,8 @@ const years = Array(71)
 export default function Home() {
   return (
     <div className="m-4">
+      <li>生まれ年の100年カレンダーを表示します</li>
+      <li>A4印刷に最適化されています</li>
       {years.map((year) => (
         <div className="my-3 mx-5" key={year}>
           <Link

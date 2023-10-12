@@ -36,13 +36,15 @@ export const Date: React.FC<DateProps> = ({ index, firstDay, lastDate }) => {
   return <td className={className}>{displayDay(index, firstDay, lastDate)}</td>;
 };
 
+const xxsStyle = { fontSize: 10 };
+
 export const Calendar: React.FC<Props> = ({ year, month }) => {
   const firstDay = dayjs(`${year}-${month}-01`).day();
   const lastDate = dayjs(`${year}-${month}-01`).endOf("month").date();
   return (
     <div className="">
-      <div className="text-l font-bold text-left mb-1">{month}月</div>
-      <table className="table-fixed text-center text-xs">
+      <div className="text-l font-bold text-left">{month}月</div>
+      <table className="table-fixed text-center" style={xxsStyle}>
         <tbody>
           <tr>
             <th className="w-1/7 text-rose-500">日</th>

@@ -8,7 +8,7 @@ type Props = {
 export const YearCalendar: React.FC<Props> = ({ year }) => {
   return (
     <div className="">
-      <div className="text-xl font-bold text-left mb-1">{year}年</div>
+      <div className="text-xl font-bold text-left">{year}年</div>
       <table className="table-fixed text-center text-xs">
         <tbody>
           <tr>
